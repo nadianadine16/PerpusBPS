@@ -52,7 +52,7 @@
           <li><a href="#about">Isi Buku Tamu</a></li>
           <li><a href="#services">Buku</a></li>
           <li><a href="#portfolio">Contact Us</a></li>
-          <li class="get-started"><a href="#about">LOGIN</a></li>
+          <li class="get-started"><a href="<?= base_url();?>user/login">LOGIN</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 

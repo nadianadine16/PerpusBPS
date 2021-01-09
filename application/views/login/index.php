@@ -20,7 +20,7 @@
           </div>
           <div class="login-wrapper my-auto">
             <h1 class="login-title" style="width:500px">Log in Admin / Supervisor Perpustakaan</h1>
-            <form action="">
+            <form action="<?=base_url('user/index')?>">
               <div class="form-group">
                 <label for="username">Username</label>
                 <input type="username" name="username" id="username" class="form-control" placeholder="Masukan Username Anda">
@@ -29,7 +29,7 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Masukan Password passsword">
               </div>
-              <input name="login" id="login" class="btn btn-block login-btn" type="button" value="Login">
+              <button name="login" id="login" class="btn btn-block login-btn"style="height:60px;"> LOGIN </button>
             </form>
           </div>
         </div>

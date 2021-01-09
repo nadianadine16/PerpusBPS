@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">  
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  
   <!-- Favicons -->
   <link href="<?= base_url()?>/assets/img/favicon.png" rel="icon">
   <link href="<?= base_url()?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -49,9 +49,9 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">Isi Buku Tamu</a></li>
+          <li><a href="<?= base_url();?>user/bukuTamu">Isi Buku Tamu</a></li>
           <li><a href="#services">Buku</a></li>
-          <li><a href="#portfolio">Contact Us</a></li>
+          <li><a href="<?= base_url();?>user/kontakus">Contact Us</a></li>
           <li class="get-started"><a href="<?= base_url();?>user/login">LOGIN</a></li>
         </ul>
       </nav><!-- .nav-menu -->

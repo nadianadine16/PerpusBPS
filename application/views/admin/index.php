@@ -69,15 +69,15 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span class="ml-2 d-none d-lg-inline text-white small">Admin</span>
+                <span class="ml-2 d-none d-lg-inline text-white small"><?= $this->session->userdata('user');?></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?= base_url();?>admin/profile">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="<?= base_url();?>login/logout">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -129,7 +129,7 @@
                       <div class="mt-2 mb-0 text-muted text-xs">
                         <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
                         <span>Since last years</span>
-                      </div>
+                      </div>profil
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-shopping-cart fa-2x text-success"></i>

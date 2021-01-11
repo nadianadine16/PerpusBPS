@@ -12,6 +12,7 @@
   <link href="<?= base_url()?>/assetsAdmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url()?>/assetsAdmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="<?= base_url()?>/assetsAdmin/css/ruang-admin.min.css" rel="stylesheet">
+  <link href="<?= base_url()?>/assetsAdmin/css/profile.css" rel="stylesheet">
 </head>
 
 <body id="page-top">

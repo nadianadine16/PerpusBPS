@@ -19,7 +19,12 @@ class Supervisor extends CI_Controller {
         $this->load->view('supervisor/index',$data);
         $this->load->view('template/admin/footer_admin',$data);
     }
-
+    public function profile(){
+        $data['title'] = 'Dashboard | Profile Supervisor';
+        $this->load->view('template/admin/header_admin',$data);
+        $this->load->view('supervisor/profile',$data);
+        $this->load->view('template/admin/footer_admin',$data);
+    }
 }
 
 /* End of file Admin.php */

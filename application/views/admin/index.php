@@ -15,7 +15,7 @@
       </div>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-folder"></i>
+        <i class="fas fa-book"></i>
           <span>Data Buku</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -28,19 +28,19 @@
       <hr class="sidebar-divider">
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url();?>admin/data_pengunjung">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fas fa-users"></i>
           <span>Data Pengunjung</span></a>
       </li>
       <hr class="sidebar-divider">
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url();?>admin/data_supervisor">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fas fa-user-tie"></i>
           <span>Data Supervisor</span></a>
       </li>
       <hr class="sidebar-divider">
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url();?>admin/data_admin">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fas fa-user-tie"></i>
           <span>Data Admin</span></a>
       </li>
       <hr class="sidebar-divider d-none d-md-block">
@@ -97,8 +97,8 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Buku</div>
-                                    <!-- <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$pendaftaran?></div> -->
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Buku</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$buku?></div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -113,8 +113,8 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Pengunjung</div>
-                                    <!-- <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$pendaftaran_fix?></div> -->
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Pengunjung</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$pengunjung?></div>
                                 </div>
                                 <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -129,8 +129,8 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Supervisor</div>
-                                    <!-- <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$prestasi?></div> -->
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Supervisor</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$supervisor?></div>
                                 </div>
                                 <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -145,8 +145,8 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Admin</div>
-                                    <!-- <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$proker?></div> -->
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Admin</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$admin?></div>
                                 </div>
                                 <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -161,8 +161,8 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Kategori Buku</div>
-                                    <!-- <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$divisi?></div> -->
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Kategori Buku</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$kategori_buku?></div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-calendar fa-2x text-gray-300"></i>

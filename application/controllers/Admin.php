@@ -14,6 +14,11 @@ class Admin extends CI_Controller {
     public function index()
     {
         $data['title'] = 'Dashboard | Perpustakaan BPS Kota Malang';
+        $data['buku'] = $this->Admin_model->hitung_buku();
+        $data['pengunjung'] = $this->Admin_model->hitung_pengunjung();
+        $data['admin'] = $this->Admin_model->hitung_admin();
+        $data['supervisor'] = $this->Admin_model->hitung_supervisor();
+        $data['kategori_buku'] = $this->Admin_model->hitung_kategori_buku();
 
         $this->load->view('template/admin/header',$data);
         $this->load->view('admin/index',$data);
@@ -155,6 +160,11 @@ class Admin extends CI_Controller {
         $this->load->view('template/admin/footer',$data);
     }
 
+    public function pengunjung_keluar($id) {
+        $this->Admin_model->pengunjung_keluar($id);
+        redirect('Admin/data_pengunjung', 'refresh');
+    }
+
     public function data_buku() {
         $data['title'] = 'Data Buku | Perpustakaan BPS Kota Malang';
         $data['buku'] = $this->Admin_model->getAllBuku();
@@ -187,6 +197,85 @@ class Admin extends CI_Controller {
             redirect('Admin/data_buku','refresh');
         }
     }
+
+    public function edit_data_buku($id) {
+        $data['title'] = 'Edit Data Buku | Perpustakaan BPS Kota Malang';
+        $data['buku'] = $this->Admin_model->getBukuById($id);
+        $data['kategori'] = $this->Admin_model->getAllKategoriBuku();
+        $data['status'] = ['Tersedia Softcopy', 'Belum Tersedia Softcopy'];
+
+        $this->form_validation->set_rules('judul_buku', 'Judul Buku', 'required');
+        $this->form_validation->set_rules('isbn', 'ISBN', 'required');
+        $this->form_validation->set_rules('nomor_katalog', 'Nomor Katalog', 'required');
+        $this->form_validation->set_rules('tahun_rilis', 'Tahun', 'required');
+        $this->form_validation->set_rules('id_kategori', 'Katgeori Buku', 'required');
+        $this->form_validation->set_rules('letak', 'letak', 'required');
+        $this->form_validation->set_rules('jumlah_halaman', 'Jumlah Halaman', 'required');
+
+        if($this->form_validation->run() == FALSE) {
+            $this->load->view('template/admin/header',$data);
+            $this->load->view('admin/edit_data_buku', $data);
+            $this->load->view('template/admin/footer');
+        }
+        else {
+            $this->Admin_model->edit_data_buku($id);
+            redirect('Admin/data_buku','refresh');
+        }
+    }
+
+    public function hapus_data_buku($id) {
+        $this->Admin_model->hapus_data_buku($id);
+        redirect('Admin/data_buku','refresh');
+    }
+
+    public function data_kategori_buku() {
+        $data['title'] = 'Data Kategori Buku | Perpustakaan BPS Kota Malang';
+        $data['kategori'] = $this->Admin_model->getAllKategoriBuku();
+
+        $this->load->view('template/admin/header',$data);
+        $this->load->view('admin/data_kategori_buku',$data);
+        $this->load->view('template/admin/footer',$data);
+    }
+
+    public function tambah_data_kategori_buku() {
+        $data['title'] = 'Tambah Data Kategori Buku | Perpustakaan BPS Kota Malang';
+
+        $this->form_validation->set_rules('nama_kategori', 'Nama Kategori', 'required');
+
+        if($this->form_validation->run() == FALSE) {
+            $this->load->view('template/admin/header',$data);
+            $this->load->view('admin/tambah_data_kategori_buku',$data);
+            $this->load->view('template/admin/footer',$data);
+        }
+        else {
+            $this->Admin_model->tambah_data_kategori_buku();
+            redirect('Admin/data_kategori_buku','refresh');
+        }
+    }
+
+    public function edit_data_kategori_buku($id) {
+        $data['title'] = 'Edit Data Kategori Buku | Perpustakaan BPS Kota Malang';
+        $data['kategori_buku'] = $this->Admin_model->getKategoriBukuById($id);
+        
+        $this->form_validation->set_rules('nama_kategori', 'Nama Kategori', 'required');
+
+        if($this->form_validation->run() == FALSE) {
+            $this->load->view('template/admin/header',$data);
+            $this->load->view('admin/edit_data_kategori_buku',$data);
+            $this->load->view('template/admin/footer',$data);
+        }
+        else {
+            $this->Admin_model->edit_data_kategori_buku($id);
+            redirect('Admin/data_kategori_buku','refresh');
+        }
+    }
+
+    public function hapus_data_kategori_buku($id) {
+        $this->Admin_model->hapus_data_kategori_buku($id);
+        redirect('Admin/data_kategori_buku','refresh');
+    }
+
+    
 }
 
 /* End of file Admin.php */

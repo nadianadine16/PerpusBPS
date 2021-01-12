@@ -22,6 +22,8 @@ class User extends CI_Controller {
     
     public function kontakus(){
         $data['title'] = 'Contact Us';
+        $data['pengunjung'] = $this->user_model->getPengunjung();
+
         $this->load->view("template/user/header",$data);
         $this->load->view("user/contactus",$data);
         $this->load->view("template/user/footer",$data);
@@ -29,10 +31,12 @@ class User extends CI_Controller {
     public function bukuTamu(){
         $data['title'] = 'Buku Tamu';
         $data['judulBuku'] = $this->user_model->getBuku();
+        $data['kategori'] = $this->user_model->getKategori();
         $data['jenis_kelamin'] = ['Laki-laki', 'Perempuan'];
+        
         $this->load->view("template/user/header",$data);
         $this->load->view("user/bukutamu",$data);
-        $this->load->view("template/user/footer",$data);
+        
     }
     public function tambahPengunjung(){
         $data['title'] = 'Buku Tamu';
@@ -55,20 +59,29 @@ class User extends CI_Controller {
             $this->load->view("template/user/footer",$data);
         }
         else {
-            $this->user_model->tambah_pengunjung();
-            redirect('user/index','refresh');
+            $cek = $this->db->query("SELECT * FROM pengunjung where email='".$this->input->post('email')."'")->num_rows();
+            if ($cek<=0){
+                $this->user_model->tambah_pengunjung();
+                redirect('user/index','refresh');   
+            }
+            else{
+            $data['pesan'] = 'Email anda telah digunakan';
+            $this->load->view("template/user/header",$data);
+            $this->load->view("user/bukutamu",$data);
+            $this->load->view("template/user/footer",$data);
+            }
         }
     }
-    public function kritik(){
-        $data['title'] = 'Kritik dan Saran';
-        $this->form_validation->set_rules('nama', 'nama', 'required');
-        $this->form_validation->set_rules('email', 'email', 'required');
-        $this->form_validation->set_rules('subject', 'subject', 'required');
-        $this->form_validation->set_rules('KritikSaran', 'KritikSaran', 'required');
+    public function prosesKritik()
+    {
+        $data['title'] = 'Dashboard | kritik';
+     
+        $this->form_validation->set_rules('id_pengunjung', 'id_pengunjung', 'required');
+        $this->form_validation->set_rules('KritikSaran', 'KritikSaran', 'required');   
+        
+        // $cek_email = $this->user_model->cek_email($email);
         if($this->form_validation->run() == FALSE) {
-            $this->load->view("template/user/header",$data);
-            $this->load->view("kontakus",$data);
-            $this->load->view("template/user/footer",$data);
+            redirect('user/kontakus','refresh');
         }
         else {
             $this->user_model->tambah_kritik();
@@ -77,6 +90,7 @@ class User extends CI_Controller {
     }
     public function buku(){
         $data['title'] = 'Buku';
+        $data['dataBuku'] = $this->user_model->getBuku();
         $this->load->view("template/user/header",$data);
         $this->load->view("user/buku",$data);
         $this->load->view("template/user/footer",$data);

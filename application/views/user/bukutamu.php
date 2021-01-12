@@ -30,6 +30,16 @@
 				<span class="contact3-form-title">
 					Buku Tamu
 				</span>
+				<div class="alert alert-info" role="alert">
+                  <?php
+                    if(isset($pesan)) {
+                      echo $pesan;
+                    }
+                    else {
+                      echo "Masukkan Data dengan benar";
+                    }
+                  ?>
+                </div>
                 <div class="wrap-input3 validate-input" data-validate="Name is required">
 					<input class="input3" type="text" name="nama_pengunjung" placeholder="Nama Anda">
 					<span class="focus-input3"></span>
@@ -84,6 +94,7 @@
 					</button>
 				</div>
 				</form>
+				
 			</div>
 		</div>
 	</div>

@@ -1,7 +1,11 @@
 <head>
 <title><?=$title?></title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
 </head>
 <!-- ======= Contact Section ======= -->
+<body>
 <section id="contact" class="contact section-bg">
   <div class="container">
 
@@ -36,17 +40,24 @@
         </div>
       </div>
       <div class="col-lg-6 mt-4 mt-lg-0">
-        <form action="<?=base_url('user/kritik')?>" method="POST">
-          <div class="form-row">
-            <div class="col-md-6 form-group">
-              <input type="text" name="nama" class="form-control" id="nama" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-              <div class="validate"></div>
-            </div>
+        <form action="<?=base_url('user/prosesKritik')?>" method="POST">
+          <!-- <div class="form-row">
             <div class="col-md-6 form-group">
               <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
               <div class="validate"></div>
             </div>
+          </div> -->
+          <!-- <div class="dropdown"> -->
+          <div class="drop-down">
+					<div>
+          <select id="id_pengunjung" name="id_pengunjung" style="width:540px;">
+          <?php foreach($pengunjung as $d) : ?>
+            <option value="<?=$d["id_pengunjung"];?>"><?=$d["email"];?></option>
+          <?php endforeach;?>
+          </select><br><br></div>
+          <span class="focus-input3"></span>
           </div>
+          <!-- </div> -->
           <div class="form-group">
             <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
             <div class="validate"></div>
@@ -57,7 +68,24 @@
           </div>
           <div class="text-center"><button type="submit">Send Message</button></div>
         </form>
+        <br>
+                <div class="alert alert-info" role="alert">
+                  <?php
+                    if(isset($pesan)) {
+                      echo $pesan;
+                    }
+                    else {
+                      echo "Masukkan Email";
+                    }
+                  ?>
+                </div>
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+ $(document).ready(function() {
+     $('#id_pengunjung').select2();
+ });
+</script>
 </section><!-- End Contact Section -->
+

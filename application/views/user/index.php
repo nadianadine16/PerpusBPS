@@ -4,7 +4,7 @@
 <section id="hero">
 
 <div class="container">
-  <div class="row d-flex align-items-center"">
+  <div class="row d-flex align-items-center">
   <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
     <h1>Perpustakaan Badan Pusat Statistik</h1>
     <h1 style="color:#fa782d">Kota Malang</h1>

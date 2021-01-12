@@ -20,17 +20,29 @@
           </div>
           <div class="login-wrapper my-auto">
             <h1 class="login-title" style="width:500px">Log in Admin / Supervisor Perpustakaan</h1>
-            <form action="<?=base_url('admin/index')?>">
+            <form action="<?=base_url('login/prosesLogin')?>" method="POST">
               <div class="form-group">
                 <label for="username">Username</label>
-                <input type="username" name="username" id="username" class="form-control" placeholder="Masukan Username Anda">
+                <input type="username" name="uname1" id="username" class="form-control" placeholder="Masukan Username Anda">
               </div>
               <div class="form-group mb-4">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="Masukan Password passsword">
+                <input type="password" name="pwd1" id="password" class="form-control" placeholder="Masukan Password passsword">
               </div>
               <button name="login" id="login" class="btn btn-block login-btn"style="height:60px;"> LOGIN </button>
             </form>
+
+              <br>
+                <div class="alert alert-info" role="alert">
+                  <?php
+                    if(isset($pesan)) {
+                      echo $pesan;
+                    }
+                    else {
+                      echo "Masukkan Username Dan Password Anda";
+                    }
+                  ?>
+                </div>
           </div>
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">

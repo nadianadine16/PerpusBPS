@@ -19,6 +19,12 @@ class Admin extends CI_Controller {
         $this->load->view('admin/index',$data);
         $this->load->view('template/admin/footer',$data);
     }
+    public function profile(){
+        $data['title'] = 'Dashboard | Profile Admin';
+        $this->load->view('template/admin/header_admin',$data);
+        $this->load->view('admin/profile',$data);
+        $this->load->view('template/admin/footer_admin',$data);
+    }
 
     public function data_admin() {
         $data['title'] = 'Data Admin | Perpustakaan BPS Kota Malang';

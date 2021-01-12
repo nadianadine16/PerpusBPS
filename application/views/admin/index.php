@@ -62,13 +62,28 @@
             <div class="topbar-divider d-none d-sm-block"></div>
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
+<<<<<<< HEAD
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Halo, <?= $this->session->userdata('admin');?></span>
+=======
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="ml-2 d-none d-lg-inline text-white small"><?= $this->session->userdata('user');?></span>
+>>>>>>> f1336945b56d7896f8d29a72692cbd16a9ac07f1
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+<<<<<<< HEAD
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<?= base_url();?>adminukm/logout" >
+=======
+                <a class="dropdown-item" href="<?= base_url();?>admin/profile">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="<?= base_url();?>login/logout">
+>>>>>>> f1336945b56d7896f8d29a72692cbd16a9ac07f1
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -107,6 +122,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2">
@@ -121,6 +137,25 @@
                                 </div>
                             </div>
                         </div>
+=======
+              </div>
+            </div>
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Sales</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">650</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
+                        <span>Since last years</span>
+                      </div>profil
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-shopping-cart fa-2x text-success"></i>
+>>>>>>> f1336945b56d7896f8d29a72692cbd16a9ac07f1
                     </div>
                 </div>
 

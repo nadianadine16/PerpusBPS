@@ -20,37 +20,36 @@
 	<link rel="stylesheet" type="text/css" href="<?= base_url()?>/assetsBukuTamu/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url()?>/assetsBukuTamu/css/main.css">
 <!--===============================================================================================-->
+	<!--  -->
 </head>
 <body>
-
 	<div class="bg-contact3" style="background-image: url('<?= base_url()?>/assetsBukuTamu/images/bg-01.jpg');">
 		<div class="container-contact3">
 			<div class="wrap-contact3"style="background:#213B52; width:1000px">
-				<form class="contact3-form validate-form">
+			<form action="<?=base_url('user/tambahPengunjung')?>" method="POST" >
 					<span class="contact3-form-title">
 						Buku Tamu
 					</span>
                     <div class="wrap-input3 validate-input" data-validate="Name is required">
-						<input class="input3" type="text" name="nama" placeholder="Nama Anda">
+						<input class="input3" type="text" name="nama_pengunjung" placeholder="Nama Anda">
 						<span class="focus-input3"></span>
 					</div>
-					<div class="wrap-contact3-form-radio">
-						<div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio1" type="radio" name="choice" value="say-hi" checked="checked">
-							<label class="label-radio3" for="radio1">
-								Laki-Laki
-							</label>
+					<div class="drop-down">
+						<div>
+						<select class="selection-2" id="jenis_kelamin" name="jenis_kelamin">
+						<?php foreach($jenis_kelamin as $t) : ?>
+                                <option value="<?=($t)?>" selected><?=($t)?></option>
+                            <?php endforeach;?>
+                        </select>
 						</div>
-
-						<div class="contact3-form-radio">
-							<input class="input-radio3" id="radio2" type="radio" name="choice" value="get-quote">
-							<label class="label-radio3" for="radio2">
-								Perempuan
-							</label>
-						</div>
+						<span class="focus-input3"></span>
+					</div>
+					<div class="wrap-input3 validate-input" data-validate = "Alamat harus diisi">
+						<input class="input3" type="text" name="alamat" placeholder="Alamat Anda">
+						<span class="focus-input3"></span>
 					</div>
                     <div class="wrap-input3 validate-input" data-validate = "No Hp harus diisi">
-						<input class="input3" type="text" name="nohp" placeholder="Nomer Handphone Anda">
+						<input class="input3" type="text" name="telepon" placeholder="Nomer Handphone Anda">
 						<span class="focus-input3"></span>
 					</div>
 					<div class="wrap-input3 validate-input" data-validate = "Isi email dengan forma: ex@gmail.com">
@@ -59,7 +58,7 @@
 					</div>
 					<div class="drop-down">
 						<div>
-							<select class="selection-2" name="service">
+							<select class="selection-2" name="pekerjaan">
 								<option>Pilih Pekerjaan</option>
 								<option>PNS</option>
 								<option>Karyawan BUMN/Swasta</option>
@@ -69,24 +68,18 @@
 						</div>
 						<span class="focus-input3"></span>
 					</div>
-                    <div class="wrap-input3 validate-input" data-validate = "asal instansi harap diisi">
-						<input class="input3" type="text" name="instansi" placeholder="Asal Instansi / Lembaga / Lainnya">
-						<span class="focus-input3"></span>
-					</div>
                     <div class="drop-down">
 						<div>
-							<select class="selection-2" name="service">
-								<option>Data yang Dibutuhkan</option>
-								<option>a</option>
-								<option>b</option>
-								<option>c</option>
-                                <option>Lainnya</option>
-							</select>
+						<select class="selection-2" id="id_buku" name="id_buku">
+                            <?php foreach($judulBuku as $d) : ?>
+                                <option value="<?=$d["id_buku"];?>"><?=$d["judul_buku"];?></option>
+                            <?php endforeach;?>
+                        </select>
 						</div>
 						<span class="focus-input3"></span>
 					</div>
 					<div class="container-contact3-form-btn">
-						<button class="contact3-form-btn">
+						<button class="contact3-form-btn" name="submit">
 							Submit
 						</button>
 					</div>

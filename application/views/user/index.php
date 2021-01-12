@@ -14,18 +14,14 @@
   </div>
 </div>
 </div>
-
 </section><!-- End Hero -->
-
 <main id="main">
 <section id="features" class="features section-bg">
   <div class="container">
-
     <div class="section-title">
       <h2 data-aos="fade-in">Pengunjung Website</h2>
       <p data-aos="fade-in">Pengunjung website ini </p>
     </div>
-
     <div class="row content">
       <div class="col-md-5" data-aos="fade-right">
         <img src="<?= base_url()?>/assets/img/features-1.svg" class="img-fluid" alt="">
@@ -43,16 +39,13 @@
       </div>
     </div>
 </section>
-
 <!-- ======= Services Section ======= -->
 <section id="services" class="services section-bg">
   <div class="container">
-
     <div class="section-title">
       <h2 data-aos="fade-in">Services</h2>
       <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
     </div>
-
     <div class="row">
       <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
         <div class="card">
@@ -77,7 +70,6 @@
             <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
           </div>
         </div>
-
       </div>
       <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
         <div class="card">
@@ -107,16 +99,13 @@
 
   </div>
 </section><!-- End Services Section -->
-
 <!-- ======= Features Section ======= -->
 <section id="features" class="features section-bg">
   <div class="container">
-
     <div class="section-title">
       <h2 data-aos="fade-in">Features</h2>
       <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
     </div>
-
     <div class="row content">
       <div class="col-md-5" data-aos="fade-right">
         <img src="<?= base_url()?>/assets/img/features-1.svg" class="img-fluid" alt="">
@@ -133,7 +122,6 @@
         </ul>
       </div>
     </div>
-
     <div class="row content">
       <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
         <img src="<?= base_url()?>/assets/img/features-2.svg" class="img-fluid" alt="">
@@ -151,7 +139,6 @@
         </p>
       </div>
     </div>
-
     <div class="row content">
       <div class="col-md-5" data-aos="fade-right">
         <img src="<?= base_url()?>/assets/img/features-3.svg" class="img-fluid" alt="">
@@ -166,7 +153,6 @@
         </ul>
       </div>
     </div>
-
     <div class="row content">
       <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
         <img src="<?= base_url()?>/assets/img/features-4.svg" class="img-fluid" alt="">
@@ -184,19 +170,15 @@
         </p>
       </div>
     </div>
-
   </div>
 </section><!-- End Features Section -->
-
 <!-- ======= Portfolio Section ======= -->
 <section id="portfolio" class="portfolio section-bg">
   <div class="container">
-
     <div class="section-title">
       <h2 data-aos="fade-in">Portfolio</h2>
       <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
     </div>
-
     <div class="row">
       <div class="col-lg-12">
         <ul id="portfolio-flters">
@@ -207,9 +189,7 @@
         </ul>
       </div>
     </div>
-
     <div class="row portfolio-container" data-aos="fade-up">
-
       <div class="col-lg-4 col-md-6 portfolio-item filter-app">
         <div class="portfolio-wrap">
           <img src="<?= base_url()?>/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
@@ -223,7 +203,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-lg-4 col-md-6 portfolio-item filter-web">
         <div class="portfolio-wrap">
           <img src="<?= base_url()?>/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
@@ -237,7 +216,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-lg-4 col-md-6 portfolio-item filter-app">
         <div class="portfolio-wrap">
           <img src="<?= base_url()?>/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
@@ -251,7 +229,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-lg-4 col-md-6 portfolio-item filter-card">
         <div class="portfolio-wrap">
           <img src="<?= base_url()?>/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
@@ -265,7 +242,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-lg-4 col-md-6 portfolio-item filter-web">
         <div class="portfolio-wrap">
           <img src="<?= base_url()?>/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
@@ -279,7 +255,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-lg-4 col-md-6 portfolio-item filter-app">
         <div class="portfolio-wrap">
           <img src="<?= base_url()?>/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
@@ -293,7 +268,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-lg-4 col-md-6 portfolio-item filter-card">
         <div class="portfolio-wrap">
           <img src="<?= base_url()?>/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
@@ -307,7 +281,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-lg-4 col-md-6 portfolio-item filter-card">
         <div class="portfolio-wrap">
           <img src="<?= base_url()?>/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
@@ -321,7 +294,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-lg-4 col-md-6 portfolio-item filter-web">
         <div class="portfolio-wrap">
           <img src="<?= base_url()?>/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
@@ -335,21 +307,16 @@
           </div>
         </div>
       </div>
-
     </div>
-
   </div>
 </section><!-- End Portfolio Section -->
-
 <!-- ======= Team Section ======= -->
 <section id="team" class="team section-bg">
   <div class="container">
-
     <div class="section-title">
       <h2 data-aos="fade-in">Team</h2>
       <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
     </div>
-
     <div class="row">
       <div class="col-xl-3 col-lg-4 col-md-6">
         <div class="member" data-aos="fade-up">
@@ -364,7 +331,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-xl-3 col-lg-4 col-md-6">
         <div class="member" data-aos="fade-up" data-aos-delay="100">
           <div class="pic"><img src="<?= base_url()?>/assets/img/team/team-2.jpg" alt=""></div>
@@ -378,7 +344,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-xl-3 col-lg-4 col-md-6">
         <div class="member" data-aos="fade-up" data-aos-delay="200">
           <div class="pic"><img src="<?= base_url()?>/assets/img/team/team-3.jpg" alt=""></div>
@@ -392,7 +357,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-xl-3 col-lg-4 col-md-6">
         <div class="member" data-aos="fade-up" data-aos-delay="300">
           <div class="pic"><img src="<?= base_url()?>/assets/img/team/team-4.jpg" alt=""></div>
@@ -407,21 +371,16 @@
         </div>
       </div>
     </div>
-
   </div>
 </section><!-- End Team Section -->
-
 <!-- ======= Pricing Section ======= -->
 <section id="pricing" class="pricing section-bg">
   <div class="container">
-
     <div class="section-title">
       <h2 data-aos="fade-in">Pricing</h2>
       <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
     </div>
-
     <div class="row no-gutters">
-
       <div class="col-lg-4 box" data-aos="zoom-in">
         <h3>Free</h3>
         <h4>$0<span>per month</span></h4>
@@ -434,7 +393,6 @@
         </ul>
         <a href="#" class="get-started-btn">Get Started</a>
       </div>
-
       <div class="col-lg-4 box featured" data-aos="zoom-in">
         <span class="featured-badge">Featured</span>
         <h3>Business</h3>
@@ -448,7 +406,6 @@
         </ul>
         <a href="#" class="get-started-btn">Get Started</a>
       </div>
-
       <div class="col-lg-4 box" data-aos="zoom-in">
         <h3>Developer</h3>
         <h4>$49<span>per month</span></h4>
@@ -461,21 +418,16 @@
         </ul>
         <a href="#" class="get-started-btn">Get Started</a>
       </div>
-
-    </div>
-
+   </div>
   </div>
 </section><!-- End Pricing Section -->
-
 <!-- ======= Frequently Asked Questions Section ======= -->
 <section id="faq" class="faq section-bg">
   <div class="container">
-
     <div class="section-title">
       <h2 data-aos="fade-in">Frequently Asked Questions</h2>
       <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
     </div>
-
     <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up">
       <div class="col-lg-5">
         <i class="bx bx-help-circle"></i>
@@ -487,7 +439,6 @@
         </p>
       </div>
     </div><!-- End F.A.Q Item-->
-
     <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-5">
         <i class="bx bx-help-circle"></i>
@@ -499,7 +450,6 @@
         </p>
       </div>
     </div><!-- End F.A.Q Item-->
-
     <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
       <div class="col-lg-5">
         <i class="bx bx-help-circle"></i>
@@ -511,7 +461,6 @@
         </p>
       </div>
     </div><!-- End F.A.Q Item-->
-
     <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
       <div class="col-lg-5">
         <i class="bx bx-help-circle"></i>
@@ -523,7 +472,6 @@
         </p>
       </div>
     </div><!-- End F.A.Q Item-->
-
     <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
       <div class="col-lg-5">
         <i class="bx bx-help-circle"></i>
@@ -535,9 +483,6 @@
         </p>
       </div>
     </div><!-- End F.A.Q Item-->
-
   </div>
 </section><!-- End Frequently Asked Questions Section -->
-
-
 </main><!-- End #main -->

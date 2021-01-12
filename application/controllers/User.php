@@ -59,4 +59,26 @@ class User extends CI_Controller {
             redirect('user/index','refresh');
         }
     }
+    public function kritik(){
+        $data['title'] = 'Kritik dan Saran';
+        $this->form_validation->set_rules('nama', 'nama', 'required');
+        $this->form_validation->set_rules('email', 'email', 'required');
+        $this->form_validation->set_rules('subject', 'subject', 'required');
+        $this->form_validation->set_rules('KritikSaran', 'KritikSaran', 'required');
+        if($this->form_validation->run() == FALSE) {
+            $this->load->view("template/user/header",$data);
+            $this->load->view("kontakus",$data);
+            $this->load->view("template/user/footer",$data);
+        }
+        else {
+            $this->user_model->tambah_kritik();
+            redirect('user/index','refresh');
+        }
+    }
+    public function buku(){
+        $data['title'] = 'Buku';
+        $this->load->view("template/user/header",$data);
+        $this->load->view("user/buku",$data);
+        $this->load->view("template/user/footer",$data);
+    }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V3</title>
+	<title><?=$title?></title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -27,70 +27,67 @@
 		<div class="container-contact3">
 			<div class="wrap-contact3"style="background:#213B52; width:1000px">
 			<form action="<?=base_url('user/tambahPengunjung')?>" method="POST" >
-					<span class="contact3-form-title">
-						Buku Tamu
-					</span>
-                    <div class="wrap-input3 validate-input" data-validate="Name is required">
-						<input class="input3" type="text" name="nama_pengunjung" placeholder="Nama Anda">
-						<span class="focus-input3"></span>
+				<span class="contact3-form-title">
+					Buku Tamu
+				</span>
+                <div class="wrap-input3 validate-input" data-validate="Name is required">
+					<input class="input3" type="text" name="nama_pengunjung" placeholder="Nama Anda">
+					<span class="focus-input3"></span>
+				</div>
+				<div class="drop-down">
+				<div>
+					<select class="selection-2" id="jenis_kelamin" name="jenis_kelamin">
+					<?php foreach($jenis_kelamin as $t) : ?>
+                        <option value="<?=($t)?>" selected><?=($t)?></option>
+                    <?php endforeach;?>
+                	</select>
+				</div>
+				<span class="focus-input3"></span>
+				</div>
+				<div class="wrap-input3 validate-input" data-validate = "Alamat harus diisi">
+					<input class="input3" type="text" name="alamat" placeholder="Alamat Anda">
+					<span class="focus-input3"></span>
+				</div>
+                <div class="wrap-input3 validate-input" data-validate = "No Hp harus diisi">
+					<input class="input3" type="text" name="telepon" placeholder="Nomer Handphone Anda">
+					<span class="focus-input3"></span>
+				</div>
+				<div class="wrap-input3 validate-input" data-validate = "Isi email dengan forma: ex@gmail.com">
+					<input class="input3" type="text" name="email" placeholder="Email Anda">
+					<span class="focus-input3"></span>
+				</div>
+				<div class="drop-down">
+				<div>
+					<select class="selection-2" name="pekerjaan">
+					<option>Pilih Pekerjaan</option>
+					<option>PNS</option>
+					<option>Karyawan BUMN/Swasta</option>
+					<option>Mahasiswa</option>
+                    <option>Lainnya</option>
+					</select>
+				</div>
+					<span class="focus-input3"></span>
+				</div>
+                <div class="drop-down">
+					<div>
+					<select class="selection-2" id="id_buku" name="id_buku">
+                    <?php foreach($judulBuku as $d) : ?>
+                    <option value="<?=$d["id_buku"];?>"><?=$d["judul_buku"];?></option>
+                    <?php endforeach;?>
+                    </select>
 					</div>
-					<div class="drop-down">
-						<div>
-						<select class="selection-2" id="jenis_kelamin" name="jenis_kelamin">
-						<?php foreach($jenis_kelamin as $t) : ?>
-                                <option value="<?=($t)?>" selected><?=($t)?></option>
-                            <?php endforeach;?>
-                        </select>
-						</div>
-						<span class="focus-input3"></span>
-					</div>
-					<div class="wrap-input3 validate-input" data-validate = "Alamat harus diisi">
-						<input class="input3" type="text" name="alamat" placeholder="Alamat Anda">
-						<span class="focus-input3"></span>
-					</div>
-                    <div class="wrap-input3 validate-input" data-validate = "No Hp harus diisi">
-						<input class="input3" type="text" name="telepon" placeholder="Nomer Handphone Anda">
-						<span class="focus-input3"></span>
-					</div>
-					<div class="wrap-input3 validate-input" data-validate = "Isi email dengan forma: ex@gmail.com">
-						<input class="input3" type="text" name="email" placeholder="Email Anda">
-						<span class="focus-input3"></span>
-					</div>
-					<div class="drop-down">
-						<div>
-							<select class="selection-2" name="pekerjaan">
-								<option>Pilih Pekerjaan</option>
-								<option>PNS</option>
-								<option>Karyawan BUMN/Swasta</option>
-								<option>Mahasiswa</option>
-                                <option>Lainnya</option>
-							</select>
-						</div>
-						<span class="focus-input3"></span>
-					</div>
-                    <div class="drop-down">
-						<div>
-						<select class="selection-2" id="id_buku" name="id_buku">
-                            <?php foreach($judulBuku as $d) : ?>
-                                <option value="<?=$d["id_buku"];?>"><?=$d["judul_buku"];?></option>
-                            <?php endforeach;?>
-                        </select>
-						</div>
-						<span class="focus-input3"></span>
-					</div>
-					<div class="container-contact3-form-btn">
-						<button class="contact3-form-btn" name="submit">
-							Submit
-						</button>
-					</div>
+					<span class="focus-input3"></span>
+				</div>
+				<div class="container-contact3-form-btn">
+					<button class="contact3-form-btn" name="submit">
+					Submit
+					</button>
+				</div>
 				</form>
 			</div>
 		</div>
 	</div>
-
-
 	<div id="dropDownSelect1"></div>
-
 <!--===============================================================================================-->
 	<script src="<?= base_url()?>/assetsBukuTamu/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

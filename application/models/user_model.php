@@ -23,4 +23,14 @@
             $this->db->set('jam_masuk', 'NOW()', FALSE);
             $this->db->insert('pengunjung', $data);
         }
-}
+        public function tambah_kritik(){
+            $this->id_kritiksaran=uniqid();
+            $data = [
+                "nama" => $this->input->post('nama', true),
+                "email" => $this->input->post('email', true),
+                "subject" => $this->input->post('subject', true),
+                "KritikSaran" => $this->input->post('KritikSaran', true),
+            ];
+            $this->db->insert('kritik_saran', $data);
+        }
+    }

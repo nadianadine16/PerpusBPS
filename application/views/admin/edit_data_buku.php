@@ -13,7 +13,7 @@
       <div class="sidebar-heading">
         Kelola Data
       </div>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-book"></i>
           <span>Data Buku</span>
@@ -38,7 +38,7 @@
           <span>Data Supervisor</span></a>
       </li>
       <hr class="sidebar-divider">
-      <li class="nav-item ">
+      <li class="nav-item active">
         <a class="nav-link" href="<?= base_url();?>admin/data_admin">
         <i class="fas fa-user-tie"></i>
           <span>Data Admin</span></a>
@@ -81,51 +81,65 @@
 
   <div class="container-fluid">
     <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Daftar Data Buku Perpustakaan BPS Kota Malang</h6>
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Edit Data Buku Perpustakaan BPS Kota Malang</h6>
+        </div>
+        <div class="card-body">
+            <?php if (validation_errors()): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo validation_errors(); ?>
+                </div>
+            <?php endif; ?>
+
+            <form action="<?=base_url('admin/edit_data_buku/'.$buku['id_buku'])?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_buku" value="<?=$buku['id_buku'];?>">
+                <div class="form-group">
+                    <label for="judul_buku">Judul Buku</label>
+                        <input type="text" class="form-control" id="judul_buku" name="judul_buku" value="<?=$buku['judul_buku'];?>">
+                </div>
+                <div class="form-group">
+                    <label for="nomor_katalog">Nomor Katalog</label>
+                        <input type="text" class="form-control" id="nomor_katalog" name="nomor_katalog" value="<?=$buku['nomor_katalog'];?>">
+                </div>
+                <div class="form-group">
+                    <label for="id_kategori">Kategori Buku</label>
+                    <select class="form-control" id="id_kategori" name="id_kategori">
+                        <?php foreach($kategori as $kb) : ?>
+                            <option value="<?=$kb["id_kategori"];?>"><?=$kb["nama_kategori"];?></option>
+                        <?php endforeach;?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="isbn">ISBN</label>
+                        <input type="text" class="form-control" id="isbn" name="isbn" value="<?=$buku['isbn'];?>">
+                </div>
+                <div class="form-group">
+                    <label for="tahun_rilis">Tahun Rilis</label>
+                        <input type="text" class="form-control" id="tahun_rilis" name="tahun_rilis" value="<?=$buku['tahun_rilis'];?>">
+                </div>
+                <div class="form-group">
+                    <label for="jumlah_halaman">Jumlah Halaman</label>
+                        <input type="text" class="form-control" id="jumlah_halaman" name="jumlah_halaman" value="<?=$buku['jumlah_halaman'];?>">
+                </div>
+                <div class="form-group">
+                    <label for="letak">Letak</label>
+                        <input type="text" class="form-control" id="letak" name="letak" value="<?=$buku['letak'];?>">
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status" name="status">
+                        <?php foreach($status as $s) : ?>
+                            <option value="<?=($s)?>" selected><?=($s)?></option>
+                        <?php endforeach;?>
+                    </select>
+                </div>  
+                <div class="form-group">
+                    <label for="cover">Upload Cover Buku</label>
+                    <input type="file" class="form-control" id="cover" name="cover">
+                    <p>Format .jpg, .png Max Size : 500KB</p>
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary float-right">Submit</button>
+            </form>
+        </div>
     </div>
-  
-  <div class="card-body">
-  <a href="<?= base_url()?>/admin/tambah_data_buku" class="btn btn-primary">+ Tambah Data</a><br><br>
-    <div class="table-responsive">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Sampul Buku</th>
-            <th>No Katalog</th>
-            <th>Kategori</th>
-            <th>Judul</th>
-            <th>ISBN</th>
-            <th>Tahun</th>
-            <th>Jumlah Halaman</th>
-            <th>Letak</th>
-            <th>Status</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>             
-        <?php $no=1; foreach($buku as $b):?>
-          <tr>
-            <td><?=$no++?></td>
-            <td><img src="<?= base_url('upload/buku/'.$b["cover"])?>" style="height: 100px; width: 100px;"></td>
-            <td><?=$b["nomor_katalog"];?></td>
-            <td><?=$b["nama_kategori"];?></td>
-            <td><?=$b["judul_buku"]?></td>
-            <td><?=$b["isbn"];?></td>
-            <td><?=$b["tahun_rilis"];?></td>
-            <td><?=$b["jumlah_halaman"];?></td>
-            <td><?=$b["letak"];?></td>
-            <td><?=$b["status"];?></td>
-            <td>
-            <a href="<?= base_url();?>admin/edit_data_buku/<?=$b['id_buku'];?>" class="btn btn-success"><i class="fas fa-edit" aria-hidden="true"></i></a>
-            <a href="<?=base_url();?>admin/hapus_data_buku/<?=$b['id_buku'];?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-          </tr>
-          <?php endforeach;?>          
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-</div>
-</div>
+</div>      

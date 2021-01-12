@@ -4,6 +4,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_model extends CI_Model {
 
+    public function hitung_buku() {
+        return $this->db->count_all('buku');
+    }
+
+    public function hitung_pengunjung() {
+        return $this->db->count_all('pengunjung');
+    }
+
+    public function hitung_kategori_buku() {
+        return $this->db->count_all('kategori_buku');
+    }
+
+    public function hitung_admin() {
+        return $this->db->get_where('user', array('status' => '1'))->num_rows();
+    }
+
+    public function hitung_supervisor() {
+        return $this->db->get_where('user', array('status' => '2'))->num_rows();
+    }
+    
     public function tambah_data_admin() {
         $this->id_user = uniqid();
         $data = [
@@ -145,6 +165,66 @@ class Admin_model extends CI_Model {
     public function getAllKategoriBuku() {
         $query = $this->db->get('kategori_buku');
         return $query->result_array();
+    }
+
+    public function getBukuById($id) {
+        $query=$this->db->get_where('buku',array('id_buku'=>$id));
+        return $query->row_array();
+    }
+
+    public function edit_data_buku($id) {
+        $post=$this->input->post();
+        $this->id_buku = $post["id_buku"];
+        $this->judul_buku = $post["judul_buku"];
+        $this->nomor_katalog = $post["nomor_katalog"];
+        $this->isbn = $post["isbn"];
+        $this->tahun_rilis = $post["tahun_rilis"];
+        $this->id_kategori = $post["id_kategori"];
+        $this->letak = $post["letak"];
+        $this->jumlah_halaman = $post["jumlah_halaman"];
+        $this->status = $post["status"];
+        $this->cover = $this->uploadCoverBuku();
+        
+        $this->db->update('buku',$this, array('id_buku' => $post['id_buku']));
+    }
+
+    public function hapus_data_buku($id) {
+        return $this->db->delete('buku',array("id_buku"=>$id));
+    }
+
+    public function tambah_data_kategori_buku() {
+        $this->id_kategori = uniqid();
+        $data = [
+            "nama_kategori" => $this->input->post('nama_kategori', true),
+        ];
+        $this->db->insert('kategori_buku', $data);
+    }
+
+    public function getKategoriBukuById($id) {
+        $query=$this->db->get_where('kategori_buku',array('id_kategori'=>$id));
+        return $query->row_array();
+    }
+
+    public function edit_data_kategori_buku($id) {
+        $post=$this->input->post();
+        $this->id_kategori = $post["id_kategori"];
+        $this->nama_kategori = $post["nama_kategori"];
+
+        $this->db->update('kategori_buku',$this, array('id_kategori' => $post['id_kategori']));
+    }
+
+    public function hapus_data_kategori_buku($id) {
+        return $this->db->delete('kategori_buku',array("id_kategori"=>$id));
+    }
+
+    public function pengunjung_keluar($id) {
+        date_default_timezone_set('Asia/Jakarta');
+        $data = date('Y-m-d H:i:s', time());
+
+        $this->db->set('jam_keluar',$data);
+        $this->db->where('id_pengunjung',$id);
+        
+        $this->db->update("pengunjung");
     }
 }
 

@@ -143,7 +143,8 @@ class Admin_model extends CI_Model {
             "letak" => $this->input->post('letak', true),
             "jumlah_halaman" => $this->input->post('jumlah_halaman', true),
             "status" => $this->input->post('status'),
-            "cover" => $this->uploadCoverBuku()
+            "cover" => $this->uploadCoverBuku(),
+            "file_buku" => $this->uploadFileBuku()
         ];
         $this->db->insert('buku', $data);
     }
@@ -158,6 +159,20 @@ class Admin_model extends CI_Model {
         $this->upload->initialize($config);
         $this->load->library('upload',$config);
         if($this->upload->do_upload('cover')) {
+            return $this->upload->data("file_name");
+        }
+    }
+
+    public function uploadFileBuku() {
+        $config['upload_path'] = './upload/buku/';
+        $config['allowed_types'] = 'pdf|docx';
+        $config['file_name'] = $this->id_buku;
+        $config['overwrite'] = true;
+        // $config['max_size'] = 1024;
+
+        $this->upload->initialize($config);
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload('file_buku')) {
             return $this->upload->data("file_name");
         }
     }
@@ -225,6 +240,14 @@ class Admin_model extends CI_Model {
         $this->db->where('id_pengunjung',$id);
         
         $this->db->update("pengunjung");
+    }
+
+    public function cetak_data_pengunjung() {
+        $this->db->select('*');
+        $this->db->from('pengunjung');
+        $this->db->join('buku', 'buku.id_buku = pengunjung.id_buku');
+        $query = $this->db->get();
+        return $query->result_array();
     }
 }
 

@@ -63,12 +63,13 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Halo, <?= $this->session->userdata('admin');?></span>
+              <i class="fas fa-user"></i> &nbsp;&nbsp;
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Halo, <?= $this->session->userdata('user');?></span>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?= base_url();?>adminukm/logout" >
+                <a class="dropdown-item" href="<?= base_url();?>Admin/logout" >
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -86,7 +87,12 @@
     </div>
   
   <div class="card-body">
-  <a href="<?= base_url()?>/admin/tambah_data_supervisor" class="btn btn-success">Cetak Data Pengunjung</a><br><br>
+  <a href="<?= base_url()?>/admin/cetak_data_pengunjung" class="btn btn-success btn-icon-split">
+      <span class="icon text-white-50">
+        <i class="fas fa-download"></i>
+      </span>
+      <span class="text">Cetak Data Pengunjung</span>
+    </a><br><br>
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>

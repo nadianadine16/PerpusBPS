@@ -13,7 +13,7 @@
       <div class="sidebar-heading">
         Kelola Data
       </div>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-book"></i>
           <span>Data Buku</span>
@@ -38,7 +38,7 @@
           <span>Data Supervisor</span></a>
       </li>
       <hr class="sidebar-divider">
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="<?= base_url();?>admin/data_admin">
         <i class="fas fa-user-tie"></i>
           <span>Data Admin</span></a>
@@ -63,12 +63,13 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Halo, <?= $this->session->userdata('admin');?></span>
+              <i class="fas fa-user"></i> &nbsp;&nbsp;
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Halo, <?= $this->session->userdata('user');?></span>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?= base_url();?>adminukm/logout" >
+                <a class="dropdown-item" href="<?= base_url();?>Admin/logout" >
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -125,6 +126,11 @@
                         <input type="text" class="form-control" id="letak" name="letak">
                 </div>
                 <div class="form-group">
+                    <label for="cover">Upload Cover Buku</label>
+                    <input type="file" class="form-control" id="cover" name="cover">
+                    <p>Format .jpg, .png Max Size : 500KB</p>
+                </div>
+                <div class="form-group">
                     <label for="status">Status</label>
                     <select class="form-control" id="status" name="status">
                         <?php foreach($status as $s) : ?>
@@ -133,9 +139,9 @@
                     </select>
                 </div>  
                 <div class="form-group">
-                    <label for="cover">Upload Cover Buku</label>
-                    <input type="file" class="form-control" id="cover" name="cover">
-                    <p>Format .jpg, .png Max Size : 500KB</p>
+                    <label for="file_buku">Upload Soft File Buku</label>
+                    <input type="file" class="form-control" id="file_buku" name="file_buku">
+                    <p>Format .pdf</p>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary float-right">Submit</button>
             </form>

@@ -275,7 +275,17 @@ class Admin extends CI_Controller {
         redirect('Admin/data_kategori_buku','refresh');
     }
 
-    
+    public function cetak_data_pengunjung() {
+        $data['tittle'] = 'Cetak Data Pengunjung | Perpustakaan BPS Kota Malang';
+        $data['pengunjung'] = $this->Admin_model->cetak_data_pengunjung();
+        $this->load->view('Admin/laporan_data_pengunjung',$data);
+
+    }
+
+    public function logout() {
+        $this->session->sess_destroy();
+        redirect('Login/index','refresh');
+    }
 }
 
 /* End of file Admin.php */

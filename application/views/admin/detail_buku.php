@@ -13,7 +13,7 @@
       <div class="sidebar-heading">
         Kelola Data
       </div>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-book"></i>
           <span>Data Buku</span>
@@ -38,7 +38,7 @@
           <span>Data Supervisor</span></a>
       </li>
       <hr class="sidebar-divider">
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="<?= base_url();?>admin/data_admin">
         <i class="fas fa-user-tie"></i>
           <span>Data Admin</span></a>
@@ -81,53 +81,56 @@
 
   <div class="container-fluid">
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Edit Data Admin Perpustakaan BPS Kota Malang</h6>
-        </div>
-        <div class="card-body">
-            <?php if (validation_errors()): ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo validation_errors(); ?>
-                </div>
-            <?php endif; ?>
-
-            <form action="<?=base_url('admin/edit_data_admin/'.$admin['id_user'])?>" method="post">
-                <input type="hidden" name="id_user" value="<?=$admin['id_user'];?>">
-                <input type="hidden" name="status" value="1">
-                <div class="form-group">
-                    <label for="nama_admin">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="nama" name="nama" value="<?=$admin['nama'];?>">
-                </div>
-                <div class="form-group">
-                    <label for="nip">Nomor Induk Pegawai</label>
-                        <input type="text" class="form-control" id="nip" name="nip" value="<?=$admin['nip'];?>">
-                </div>
-                <div class="form-group">
-                    <label for="jenis_kelamin">Jenis Kelamin</label>
-                    <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
-                    <?php foreach($jenis_kelamin as $jk) : ?>
-                        <?php if($jk == $jenis_kelamin['jenis_kelamin']) : ?>
-                            <option value="<?=($jk)?>" selected><?=($jk)?></option>
-                        <?php else :?>
-                            <option value="<?=($jk)?>"><?=($jk)?></option>
-                        <?php endif; ?>
-                    <?php endforeach;?>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="telepon">Telepon</label>
-                        <input type="text" class="form-control" id="telepon" name="telepon" value="<?=$admin['telepon'];?>">
-                </div>
-                <div class="form-group">
-                    <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" value="<?=$admin['username'];?>">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" value="<?=$admin['password'];?>">
-                </div>   
-                <button type="submit" name="submit" class="btn btn-primary float-right">Submit</button>
-            </form>
-        </div>
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Detail Data Buku Perpustakaan BPS Kota Malang</h6>
+      </div>
+      <div class="card-body">
+        <?php foreach ($buku as $b) :?>
+            <h5 class="card-title"><?=($b['judul_buku']);?></h5>
+            <p class="card-text">
+                <img src="<?= base_url('upload/buku/'.$b['cover'])?>" style="height: 210px; width: 150px;">
+            </p>
+            <p class="card-text">
+                <label for="kategori"><b>Kategori :</b></label>
+                <?=($b['nama_kategori']); ?>
+            </p>
+            <p class="card-text">
+                <label for="isbn"><b>ISBN :</b></label>
+                <?=($b['isbn']); ?>
+            </p>
+            <p class="card-text">
+                <label for="nomor_katalog"><b>Nomor Katalog :</b></label>
+                <?=($b['nomor_katalog']); ?>
+            </p>
+            <p class="card-text">
+                <label for="tahun_rilis"><b>Tahun Rilis :</b></label>
+                <?=($b['tahun_rilis']); ?>
+            </p>
+            <p class="card-text">
+                <label for="letak"><b>Letak :</b></label>
+                <?=($b['letak']); ?>
+            </p>
+            <p class="card-text">
+                <label for="jumlah_halaman"><b>Jumlah Halaman :</b></label>
+                <?=($b['jumlah_halaman']); ?>
+            </p>
+            <p class="card-text">
+                <label for="status"><b>Status :</b></label>
+                <?=($b['status']); ?>
+            </p>
+            <p class="card-text">
+                <label for="deskripsi"><b>Deskripsi :</b></label>
+                <?=($b['deskripsi']); ?>
+            </p>
+            <p class="card-text">
+                <label for=""><b>File Buku :</b></label>
+                <!-- <?=($b['file_buku']); ?> -->
+                <a href="<?= base_url('upload/buku/'.$b["file_buku"])?>"><?=$b["file_buku"];?>
+            </p>
+            
+                <!-- <a href src="<?= base_url('upload/buku/'.$b['file_buku'])?>" class="btn btn-primary btn-sm" Lihat Buku> -->
+        <?php endforeach; ?>
     </div>
-</div>      
+  </div>
+</div>
+</div>

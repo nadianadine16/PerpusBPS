@@ -142,6 +142,7 @@ class Admin_model extends CI_Model {
             "id_kategori" => $this->input->post('id_kategori', true),
             "letak" => $this->input->post('letak', true),
             "jumlah_halaman" => $this->input->post('jumlah_halaman', true),
+            "deskripsi" => $this->input->post('deskripsi', true),
             "status" => $this->input->post('status'),
             "cover" => $this->uploadCoverBuku(),
             "file_buku" => $this->uploadFileBuku()
@@ -197,6 +198,7 @@ class Admin_model extends CI_Model {
         $this->id_kategori = $post["id_kategori"];
         $this->letak = $post["letak"];
         $this->jumlah_halaman = $post["jumlah_halaman"];
+        $this->deskripsi = $post["deskripsi"];
         $this->status = $post["status"];
         $this->cover = $this->uploadCoverBuku();
         
@@ -205,6 +207,16 @@ class Admin_model extends CI_Model {
 
     public function hapus_data_buku($id) {
         return $this->db->delete('buku',array("id_buku"=>$id));
+    }
+
+    public function detail_buku($id) {
+        $this->db->select('*');
+        $this->db->from('buku');
+        $this->db->join('kategori_buku', 'buku.id_kategori = kategori_buku.id_kategori');
+        $this->db->where('buku.id_buku', $id);
+        return $this->db->get()->result_array();
+
+        // return $this->db->get_where('buku', array('id_buku' => $id))->result_array();
     }
 
     public function tambah_data_kategori_buku() {

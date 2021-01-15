@@ -68,8 +68,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?= base_url();?>Admin/logout" >
+                <a class="dropdown-item" href="<?= base_url();?>Admin/logout">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -124,6 +123,10 @@
                 <div class="form-group">
                     <label for="letak">Letak</label>
                         <input type="text" class="form-control" id="letak" name="letak">
+                </div>
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                        <input type="text" class="form-control" id="deskripsi" name="deskripsi">
                 </div>
                 <div class="form-group">
                     <label for="cover">Upload Cover Buku</label>

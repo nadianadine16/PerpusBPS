@@ -186,6 +186,7 @@ class Admin extends CI_Controller {
         $this->form_validation->set_rules('id_kategori', 'Katgeori Buku', 'required');
         $this->form_validation->set_rules('letak', 'letak', 'required');
         $this->form_validation->set_rules('jumlah_halaman', 'Jumlah Halaman', 'required');
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
         if($this->form_validation->run() == FALSE) {
             $this->load->view('template/admin/header',$data);
@@ -211,6 +212,7 @@ class Admin extends CI_Controller {
         $this->form_validation->set_rules('id_kategori', 'Katgeori Buku', 'required');
         $this->form_validation->set_rules('letak', 'letak', 'required');
         $this->form_validation->set_rules('jumlah_halaman', 'Jumlah Halaman', 'required');
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
         if($this->form_validation->run() == FALSE) {
             $this->load->view('template/admin/header',$data);
@@ -234,6 +236,15 @@ class Admin extends CI_Controller {
 
         $this->load->view('template/admin/header',$data);
         $this->load->view('admin/data_kategori_buku',$data);
+        $this->load->view('template/admin/footer',$data);
+    }
+
+    public function detail_buku($id) {
+        $data['title'] = 'Detail Buku | Perpustakaan BPS Kota Malang';
+        $data['buku'] = $this->Admin_model->detail_buku($id);
+
+        $this->load->view('template/admin/header',$data);
+        $this->load->view('admin/detail_buku',$data);
         $this->load->view('template/admin/footer',$data);
     }
 

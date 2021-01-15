@@ -68,8 +68,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?= base_url();?>Admin/logout" >
+                <a class="dropdown-item" href="<?= base_url();?>Admin/logout">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -119,8 +118,8 @@
                   <td><?=$s["password"];?></td>
                   
                   <td>
-                  <a href="<?= base_url();?>admin/edit_data_supervisor/<?=$s['id_user'];?>" class="btn btn-success"><i class="fas fa-edit" aria-hidden="true"></i></a>
-                  <a href="<?=base_url();?>admin/hapus_data_supervisor/<?=$s['id_user'];?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                  <a href="<?= base_url();?>admin/edit_data_supervisor/<?=$s['id_user'];?>" class="btn btn-success"><i class="fas fa-edit fa-xs" aria-hidden="true"></i></a>
+                  <a href="<?=base_url();?>admin/hapus_data_supervisor/<?=$s['id_user'];?>" class="btn btn-danger"><i class="fa fa-trash fa-xs" aria-hidden="true"></i></a></td>
           </tr>
           <?php endforeach;?>          
         </tbody>

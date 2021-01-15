@@ -68,8 +68,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?= base_url();?>Admin/logout" >
+                <a class="dropdown-item" href="<?= base_url();?>Admin/logout">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -96,18 +95,18 @@
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
-          <tr>
+          <tr align="center">
             <th>No</th>
-            <th>Sampul Buku</th>
+            <!-- <th>Sampul Buku</th> -->
             <th>No Katalog</th>
             <th>Kategori</th>
             <th>Judul</th>
-            <th>ISBN</th>
-            <th>Tahun</th>
-            <th>Jumlah Halaman</th>
-            <th>Letak</th>
+            <!-- <th>ISBN</th> -->
+            <th>Tahun Rilis</th>
+            <!-- <th>Jumlah Halaman</th> -->
+            <!-- <th>Letak</th> -->
             <th>Status</th>
-            <th>File Buku</th>
+            <!-- <th>File Buku</th> -->
             <th>Aksi</th>
           </tr>
         </thead>
@@ -115,19 +114,20 @@
         <?php $no=1; foreach($buku as $b):?>
           <tr>
             <td><?=$no++?></td>
-            <td><img src="<?= base_url('upload/buku/'.$b["cover"])?>" style="height: 100px; width: 100px;"></td>
+            <!-- <td><img src="<?= base_url('upload/buku/'.$b["cover"])?>" style="height: 100px; width: 100px;"></td> -->
             <td><?=$b["nomor_katalog"];?></td>
             <td><?=$b["nama_kategori"];?></td>
             <td><?=$b["judul_buku"]?></td>
-            <td><?=$b["isbn"];?></td>
+            <!-- <td><?=$b["isbn"];?></td> -->
             <td><?=$b["tahun_rilis"];?></td>
-            <td><?=$b["jumlah_halaman"];?></td>
-            <td><?=$b["letak"];?></td>
+            <!-- <td><?=$b["jumlah_halaman"];?></td> -->
+            <!-- <td><?=$b["letak"];?></td> -->
             <td><?=$b["status"];?></td>
-            <td><a href="<?= base_url('upload/buku/'.$b["file_buku"])?>"><?=$b["file_buku"];?></td>
-            <td>
-            <a href="<?= base_url();?>admin/edit_data_buku/<?=$b['id_buku'];?>" class="btn btn-success"><i class="fas fa-edit" aria-hidden="true"></i></a>
-            <a href="<?=base_url();?>admin/hapus_data_buku/<?=$b['id_buku'];?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            <!-- <td><a href="<?= base_url('upload/buku/'.$b["file_buku"])?>"><?=$b["file_buku"];?></td> -->
+            <td style="width:130px;">
+            <a href="<?= base_url();?>admin/detail_buku/<?=$b['id_buku'];?>" class="btn btn-primary btn-sm"><i class="fas fa-eye fa-xs" aria-hidden="true"></i></a>
+            <a href="<?= base_url();?>admin/edit_data_buku/<?=$b['id_buku'];?>" class="btn btn-success btn-sm"><i class="fas fa-edit fa-xs" aria-hidden="true"></i></a>
+            <a href="<?=base_url();?>admin/hapus_data_buku/<?=$b['id_buku'];?>" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-xs" aria-hidden="true"></i></a></td>
           </tr>
           <?php endforeach;?>          
         </tbody>

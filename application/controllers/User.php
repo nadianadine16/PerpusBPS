@@ -95,4 +95,11 @@ class User extends CI_Controller {
         $this->load->view("user/buku",$data);
         $this->load->view("template/user/footer",$data);
     }
+    public function detail_buku($id){
+        $data['title'] = 'Detail Buku';
+        $data['dataBuku'] = $this->user_model->detail_buku($id);
+        $this->load->view("template/user/header",$data);
+        $this->load->view("user/detail_buku",$data);
+        $this->load->view("template/user/footer",$data);
+    }
 }

@@ -12,9 +12,10 @@
       <div class="col-xl-3 col-lg-4 col-md-6">
         <div class="member" data-aos="fade-up">
           <div class="pic"><img src="<?= base_url('upload/buku/'.$p["cover"])?>"  style="height: 300px; width: 200px;" alt=""></div>
-          <h4><?=$p["judul_buku"];?></h4>
+          <h4><a href="<?= base_url();?>user/detail_buku/<?=$p['id_buku'];?>" style="color:#213B52"><?=$p["judul_buku"];?></a></h4>
           <span>ISBN : <?=$p["isbn"];?></span>
           <h6 style="color: #2c3852"><?=date('d-m-Y', strtotime($p["tahun_rilis"]));?></h6>
+          
         </div>
       </div>
       <?php endforeach;?>

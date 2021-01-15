@@ -1,39 +1,57 @@
 <section id="about" class="about section-bg">
       <div class="container">
-
         <div class="row">
-          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
+        <?php foreach($dataBuku as $p):?>
+          <div class="pic"><img src="<?= base_url('upload/buku/'.$p["cover"])?>"  style="height: 400px; width: 300px;" alt=""></div>
           <div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch">
             <div class="content d-flex flex-column justify-content-center">
-              <h3 data-aos="fade-in" data-aos-delay="100">Voluptatem dignissimos provident quasi</h3>
+              <h3 data-aos="fade-in" data-aos-delay="100"><?=$p["judul_buku"];?></h3>
               <p data-aos="fade-in">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              <?=$p["deskripsi"];?>
+              </p><br>
+              <p data-aos="fade-in">
+                <b style="color:#213B52">Kategori <?=$p["nama_kategori"];?></b>
               </p>
               <div class="row">
                 <div class="col-md-6 icon-box" data-aos="fade-up">
                   <i class="bx bx-receipt"></i>
-                  <h4><a href="#">Corporis voluptates sit</a></h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <h4><a href="#">ISBN</a></h4>
+                  <p><?=$p["isbn"];?></p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                  <i class="bx bx-cube-alt"></i>
-                  <h4><a href="#">Ullamco laboris nisi</a></h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                <i class="bx bx-receipt"></i>
+                  <h4><a href="#">Nomor Katalog</a></h4>
+                  <p><?=$p["nomor_katalog"];?></p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bx bx-images"></i>
-                  <h4><a href="#">Labore consequatur</a></h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                <i class="bx bx-receipt"></i>
+                  <h4><a href="#">Tahun Rilis</a></h4>
+                  <p><?=$p["tahun_rilis"];?></p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bx bx-shield"></i>
-                  <h4><a href="#">Beatae veritatis</a></h4>
-                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                <i class="bx bx-receipt"></i>
+                  <h4><a href="#">Letak</a></h4>
+                  <p><?=$p["letak"];?></p>
                 </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                <i class="bx bx-receipt"></i>
+                  <h4><a href="#">Jumlah Halaman</a></h4>
+                  <p><?=$p["jumlah_halaman"];?></p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                <i class="bx bx-receipt"></i>
+                  <h4><a href="#">Status</a></h4>
+                  <p><?=$p["status"];?></p>
+                </div>
+                <p class="card-text">
+                <label for=""><b>File Buku :</b></label>
+                <!-- <?=($p['file_buku']); ?> -->
+                <a href="<?= base_url('upload/buku/'.$p["file_buku"])?>"><?=$p["file_buku"];?>
+            </p>
               </div>
             </div><!-- End .content-->
           </div>
+          <?php endforeach;?>
         </div>
-
       </div>
     </section><!-- End About Section -->

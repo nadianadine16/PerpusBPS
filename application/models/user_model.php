@@ -40,4 +40,11 @@
         ];
         $this->db->insert('kritik_saran', $data);
     }
+    public function detail_buku($id){
+        $this->db->select('*');
+        $this->db->from('buku');
+        $this->db->join('kategori_buku', 'buku.id_kategori = kategori_buku.id_kategori');
+        $this->db->where('buku.id_buku', $id);
+        return $this->db->get()->result_array();
+    }
 }

@@ -26,10 +26,20 @@
           </div>
       </li>
       <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Kelola Data
+      </div>
       <li class="nav-item active">
-        <a class="nav-link" href="<?= base_url();?>admin/data_pengunjung">
-        <i class="fas fa-users"></i>
-          <span>Data Pengunjung</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Data Pengunjung</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?= base_url();?>admin/data_pengunjung_datang">Pengunjung Datang</a>
+            <a class="collapse-item" href="<?= base_url();?>admin/data_pengunjung_pulang">Pengunjung Pulang</a>
+          </div>
+        </div>
       </li>
       <hr class="sidebar-divider">
       <li class="nav-item">
@@ -42,6 +52,12 @@
         <a class="nav-link" href="<?= base_url();?>admin/data_admin">
         <i class="fas fa-user-tie"></i>
           <span>Data Admin</span></a>
+      </li>
+      <hr class="sidebar-divider d-none d-md-block">
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url();?>admin/data_kritik_saran">
+        <i class="fas fa-envelope-open-text"></i>
+          <span>Kritik dan Saran</span></a>
       </li>
       <hr class="sidebar-divider d-none d-md-block">
     </ul>

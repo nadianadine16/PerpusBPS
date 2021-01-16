@@ -26,10 +26,20 @@
           </div>
       </li>
       <hr class="sidebar-divider">
-      <li class="nav-item">
-        <a class="nav-link" href="<?= base_url();?>admin/data_pengunjung">
-        <i class="fas fa-users"></i>
-          <span>Data Pengunjung</span></a>
+      <div class="sidebar-heading">
+        Kelola Data
+      </div>
+      <li class="nav-item ">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Data Pengunjung</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?= base_url();?>admin/data_pengunjung_datang">Pengunjung Datang</a>
+            <a class="collapse-item" href="<?= base_url();?>admin/data_pengunjung_pulang">Pengunjung Pulang</a>
+          </div>
+        </div>
       </li>
       <hr class="sidebar-divider">
       <li class="nav-item">
@@ -44,7 +54,12 @@
           <span>Data Admin</span></a>
       </li>
       <hr class="sidebar-divider d-none d-md-block">
-      
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url();?>admin/data_kritik_saran">
+        <i class="fas fa-envelope-open-text"></i>
+          <span>Kritik dan Saran</span></a>
+      </li>
+      <hr class="sidebar-divider d-none d-md-block">
     </ul>
     
     <!-- End of Sidebar -->
@@ -115,7 +130,7 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Pengunjung</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$pengunjung?></div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$pengunjung_datang?></div>
                                 </div>
                                 <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -164,6 +179,38 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Kategori Buku</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$kategori_buku?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Pengunjung Pulang</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$pengunjung_pulang?></div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Kritik dan Saran</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$kritik_saran?></div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-calendar fa-2x text-gray-300"></i>

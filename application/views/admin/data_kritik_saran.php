@@ -29,7 +29,7 @@
       <div class="sidebar-heading">
         Kelola Data
       </div>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-users"></i>
           <span>Data Pengunjung</span>
@@ -42,7 +42,7 @@
         </div>
       </li>
       <hr class="sidebar-divider">
-      <li class="nav-item ">
+      <li class="nav-item">
         <a class="nav-link" href="<?= base_url();?>admin/data_supervisor">
         <i class="fas fa-user-tie"></i>
           <span>Data Supervisor</span></a>
@@ -53,8 +53,8 @@
         <i class="fas fa-user-tie"></i>
           <span>Data Admin</span></a>
       </li>
-      <hr class="sidebar-divider d-none d-md-block">
-      <li class="nav-item">
+      <hr class="sidebar-divider">
+      <li class="nav-item active">
         <a class="nav-link" href="<?= base_url();?>admin/data_kritik_saran">
         <i class="fas fa-envelope-open-text"></i>
           <span>Kritik dan Saran</span></a>
@@ -97,24 +97,37 @@
 
   <div class="container-fluid">
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Kategori Buku Perpustakaan BPS Kota Malang</h6>
-        </div>
-        <div class="card-body">
-            <?php if (validation_errors()): ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo validation_errors(); ?>
-                </div>
-            <?php endif; ?>
-
-            <form action="<?=base_url('admin/edit_data_kategori_buku/'.$kategori_buku['id_kategori'])?>" method="post">
-            <input type="hidden" name="id_kategori" value="<?=$kategori_buku['id_kategori'];?>">
-                <div class="form-group">
-                    <label for="nama_kategori">Nama Kategori Buku</label>
-                        <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" value="<?=$kategori_buku['nama_kategori'];?>">
-                </div> 
-                <button type="submit" name="submit" class="btn btn-primary float-right">Submit</button>
-            </form>
-        </div>
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Daftar Kritik dan Saran Perpustakaan BPS Kota Malang</h6>
     </div>
-</div>      
+  
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr align="center">
+            <th>No</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Kritik dan Saran</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>             
+        <?php $no=1; foreach($kritik_saran as $ks):?>
+          <tr>
+            <td><?=$no++?></td>
+            <td><?=$ks["nama_pengunjung"];?></td>
+            <td><?=$ks["email"];?></td>
+            <td><?=$ks["KritikSaran"]?></td>
+            <td style="width:100px;">
+            <a href="<?=base_url();?>admin/hapus_kritik_saran/<?=$ks['id_kritiksaran'];?>" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-xs" aria-hidden="true"></i></a></td>
+          </tr>
+          <?php endforeach;?>          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>

@@ -15,20 +15,16 @@ class Admin extends CI_Controller {
     {
         $data['title'] = 'Dashboard | Perpustakaan BPS Kota Malang';
         $data['buku'] = $this->Admin_model->hitung_buku();
-        $data['pengunjung'] = $this->Admin_model->hitung_pengunjung();
+        $data['pengunjung_datang'] = $this->Admin_model->hitung_pengunjung_datang();
+        $data['pengunjung_pulang'] = $this->Admin_model->hitung_pengunjung_pulang();
         $data['admin'] = $this->Admin_model->hitung_admin();
         $data['supervisor'] = $this->Admin_model->hitung_supervisor();
         $data['kategori_buku'] = $this->Admin_model->hitung_kategori_buku();
+        $data['kritik_saran'] = $this->Admin_model->hitung_kritik_saran();
 
         $this->load->view('template/admin/header',$data);
         $this->load->view('admin/index',$data);
         $this->load->view('template/admin/footer',$data);
-    }
-    public function profile(){
-        $data['title'] = 'Dashboard | Profile Admin';
-        $this->load->view('template/admin/header_admin',$data);
-        $this->load->view('admin/profile',$data);
-        $this->load->view('template/admin/footer_admin',$data);
     }
 
     public function data_admin() {
@@ -151,12 +147,21 @@ class Admin extends CI_Controller {
         redirect('Admin/data_supervisor','refresh');
     }
 
-    public function data_pengunjung() {
-        $data['title'] = 'Data Pengunjung | Perpustakaan BPS Kota Malang';
+    public function data_pengunjung_datang() {
+        $data['title'] = 'Data Pengunjung Datang | Perpustakaan BPS Kota Malang';
         $data['pengunjung'] = $this->Admin_model->getAllPengunjung();
 
         $this->load->view('template/admin/header',$data);
-        $this->load->view('admin/data_pengunjung',$data);
+        $this->load->view('admin/data_pengunjung_datang',$data);
+        $this->load->view('template/admin/footer',$data);
+    }
+
+    public function data_pengunjung_pulang() {
+        $data['title'] = 'Data Pengunjung Pulang | Perpustakaan BPS Kota Malang';
+        $data['pengunjung'] = $this->Admin_model->getAllPengunjungPulang();
+
+        $this->load->view('template/admin/header',$data);
+        $this->load->view('admin/data_pengunjung_pulang',$data);
         $this->load->view('template/admin/footer',$data);
     }
 
@@ -290,7 +295,15 @@ class Admin extends CI_Controller {
         $data['tittle'] = 'Cetak Data Pengunjung | Perpustakaan BPS Kota Malang';
         $data['pengunjung'] = $this->Admin_model->cetak_data_pengunjung();
         $this->load->view('Admin/laporan_data_pengunjung',$data);
+    }
 
+    public function data_kritik_saran() {
+        $data['title'] = 'Data Kritik dan Saran | Perpustakaan BPS Kota Malang';
+        $data['kritik_saran'] = $this->Admin_model->data_kritik_saran();
+
+        $this->load->view('template/admin/header',$data);
+        $this->load->view('admin/data_kritik_saran',$data);
+        $this->load->view('template/admin/footer',$data);
     }
 
     public function logout() {

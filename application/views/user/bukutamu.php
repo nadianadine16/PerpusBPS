@@ -88,6 +88,7 @@
 					</div>
 					<span class="focus-input3"></span>
 				</div>
+				<input class="input3" type="hidden" name="status" value="1">
 				<div class="container-contact3-form-btn">
 					<button class="contact3-form-btn" name="submit">
 					Submit

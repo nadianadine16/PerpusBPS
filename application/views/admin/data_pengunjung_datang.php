@@ -26,10 +26,20 @@
           </div>
       </li>
       <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Kelola Data
+      </div>
       <li class="nav-item active">
-        <a class="nav-link" href="<?= base_url();?>admin/data_pengunjung">
-        <i class="fas fa-users"></i>
-          <span>Data Pengunjung</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Data Pengunjung</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?= base_url();?>admin/data_pengunjung_datang">Pengunjung Datang</a>
+            <a class="collapse-item" href="<?= base_url();?>admin/data_pengunjung_pulang">Pengunjung Pulang</a>
+          </div>
+        </div>
       </li>
       <hr class="sidebar-divider">
       <li class="nav-item ">
@@ -42,6 +52,12 @@
         <a class="nav-link" href="<?= base_url();?>admin/data_admin">
         <i class="fas fa-user-tie"></i>
           <span>Data Admin</span></a>
+      </li>
+      <hr class="sidebar-divider d-none d-md-block">
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url();?>admin/data_kritik_saran">
+        <i class="fas fa-envelope-open-text"></i>
+          <span>Kritik dan Saran</span></a>
       </li>
       <hr class="sidebar-divider d-none d-md-block">
     </ul>
@@ -82,20 +98,14 @@
   <div class="container-fluid">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Daftar Data Pengunjung Perpustakaan BPS Kota Malang</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Daftar Data Pengunjung Datang Perpustakaan BPS Kota Malang</h6>
     </div>
   
   <div class="card-body">
-  <a href="<?= base_url()?>/admin/cetak_data_pengunjung" class="btn btn-success btn-icon-split">
-      <span class="icon text-white-50">
-        <i class="fas fa-download"></i>
-      </span>
-      <span class="text">Cetak Data Pengunjung</span>
-    </a><br><br>
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
-          <tr>
+          <tr style="align:center">
             <th>No</th>
             <th>Nama</th>
             <th>Jenis Kelamin</th>
@@ -103,9 +113,9 @@
             <th>Telepon</th>
             <th>Pekerjaan</th>
             <th>Jam Masuk</th>
-            <th>Jam Keluar</th>
+            <!-- <th>Jam Keluar</th> -->
             <th>Buku yang Dicari</th>
-            <th>Aksi</th>
+            <th >Aksi</th>
           </tr>
         </thead>
         <tbody>             
@@ -118,11 +128,11 @@
             <td><?=$p["telepon"];?></td>
             <td><?=$p["pekerjaan"];?></td>
             <td><?=$p["jam_masuk"];?></td>
-            <td><?=$p["jam_keluar"];?></td>
+            <!-- <td><?=$p["jam_keluar"];?></td> -->
             <td><?=$p["judul_buku"];?></td>
-            <td>
-            <a href="<?= base_url();?>admin/pengunjung_keluar/<?=$p['id_pengunjung'];?>" class="btn btn-success"><i class="fas fa-sign-out-alt"></i></a>
-            <a href="<?=base_url();?>admin/hapus_data_pengunjung/<?=$p['id_pengunjung'];?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            <td style="width:130px;">
+            <a href="<?= base_url();?>admin/pengunjung_keluar/<?=$p['id_pengunjung'];?>" class="btn btn-success"><i class="fas fa-check fa-xs"></i></a>
+            <a href="<?=base_url();?>admin/hapus_data_pengunjung/<?=$p['id_pengunjung'];?>" class="btn btn-danger"><i class="fa fa-trash fa-xs" aria-hidden="true"></i></a></td>
           </tr>
           <?php endforeach;?>          
         </tbody>

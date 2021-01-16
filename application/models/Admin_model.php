@@ -8,8 +8,12 @@ class Admin_model extends CI_Model {
         return $this->db->count_all('buku');
     }
 
-    public function hitung_pengunjung() {
-        return $this->db->count_all('pengunjung');
+    public function hitung_pengunjung_datang() {
+        return $this->db->get_where('pengunjung', array('status' => '1'))->num_rows();
+    }
+
+    public function hitung_pengunjung_pulang() {
+        return $this->db->get_where('pengunjung', array('status' => '2'))->num_rows();
     }
 
     public function hitung_kategori_buku() {
@@ -22,6 +26,10 @@ class Admin_model extends CI_Model {
 
     public function hitung_supervisor() {
         return $this->db->get_where('user', array('status' => '2'))->num_rows();
+    }
+
+    public function hitung_kritik_saran() {
+        return $this->db->count_all('kritik_saran');
     }
     
     public function tambah_data_admin() {
@@ -117,9 +125,21 @@ class Admin_model extends CI_Model {
     }
 
     public function getAllPengunjung() {
+        $status = 1;
         $this->db->select('*');
         $this->db->from('pengunjung');
         $this->db->join('buku', 'buku.id_buku = pengunjung.id_buku');
+        $this->db->where(array('pengunjung.status'=>$status));
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function getAllPengunjungPulang() {
+        $status = 2;
+        $this->db->select('*');
+        $this->db->from('pengunjung');
+        $this->db->join('buku', 'buku.id_buku = pengunjung.id_buku');
+        $this->db->where(array('pengunjung.status'=>$status));
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -249,6 +269,7 @@ class Admin_model extends CI_Model {
         $data = date('Y-m-d H:i:s', time());
 
         $this->db->set('jam_keluar',$data);
+        $this->db->set('status', 2);
         $this->db->where('id_pengunjung',$id);
         
         $this->db->update("pengunjung");
@@ -258,6 +279,14 @@ class Admin_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('pengunjung');
         $this->db->join('buku', 'buku.id_buku = pengunjung.id_buku');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function data_kritik_saran() {
+        $this->db->select('*');
+        $this->db->from('kritik_saran');
+        $this->db->join('pengunjung', 'pengunjung.id_pengunjung = kritik_saran.id_pengunjung');
         $query = $this->db->get();
         return $query->result_array();
     }

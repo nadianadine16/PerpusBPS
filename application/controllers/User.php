@@ -20,7 +20,7 @@ class User extends CI_Controller {
         
     }
     
-    public function kontakus(){
+    public function contactus(){
         $data['title'] = 'Contact Us';
         $data['pengunjung'] = $this->user_model->getPengunjung();
 
@@ -81,7 +81,7 @@ class User extends CI_Controller {
         
         // $cek_email = $this->user_model->cek_email($email);
         if($this->form_validation->run() == FALSE) {
-            redirect('user/kontakus','refresh');
+            redirect('user/contactus','refresh');
         }
         else {
             $this->user_model->tambah_kritik();

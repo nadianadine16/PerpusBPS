@@ -105,15 +105,15 @@
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
-          <tr style="align:center">
+          <tr>
             <th>No</th>
             <th>Nama</th>
             <th>Jenis Kelamin</th>
             <th>Alamat</th>
             <th>Telepon</th>
             <th>Pekerjaan</th>
+            <th>Tanggal</th>
             <th>Jam Masuk</th>
-            <!-- <th>Jam Keluar</th> -->
             <th>Buku yang Dicari</th>
             <th >Aksi</th>
           </tr>
@@ -127,8 +127,8 @@
             <td><?=$p["alamat"]?></td>
             <td><?=$p["telepon"];?></td>
             <td><?=$p["pekerjaan"];?></td>
+            <td><?=$p["tanggal"];?></td>
             <td><?=$p["jam_masuk"];?></td>
-            <!-- <td><?=$p["jam_keluar"];?></td> -->
             <td><?=$p["judul_buku"];?></td>
             <td style="width:130px;">
             <a href="<?= base_url();?>admin/pengunjung_keluar/<?=$p['id_pengunjung'];?>" class="btn btn-success"><i class="fas fa-check fa-xs"></i></a>

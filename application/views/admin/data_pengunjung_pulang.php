@@ -102,7 +102,7 @@
     </div>
   
   <div class="card-body">
-  <a href="<?= base_url()?>/admin/cetak_data_pengunjung" class="btn btn-success btn-icon-split">
+  <a href="<?= base_url()?>Admin/form_export" class="btn btn-success btn-icon-split">
       <span class="icon text-white-50">
         <i class="fas fa-download"></i>
       </span>
@@ -118,6 +118,7 @@
             <th>Alamat</th>
             <th>Telepon</th>
             <th>Pekerjaan</th>
+            <th>Tanggal</th>
             <th>Jam Masuk</th>
             <th>Jam Keluar</th>
             <th>Buku yang Dicari</th>
@@ -133,6 +134,7 @@
             <td><?=$p["alamat"]?></td>
             <td><?=$p["telepon"];?></td>
             <td><?=$p["pekerjaan"];?></td>
+            <td><?=$p["tanggal"];?></td>
             <td><?=$p["jam_masuk"];?></td>
             <td><?=$p["jam_keluar"];?></td>
             <td><?=$p["judul_buku"];?></td>

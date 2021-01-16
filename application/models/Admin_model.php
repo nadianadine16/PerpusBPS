@@ -3,6 +3,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_model extends CI_Model {
+    var $CI = NULL;
+
+    public function __construct() {
+		$this->CI =& get_instance();
+	}
 
     public function hitung_buku() {
         return $this->db->count_all('buku');
@@ -281,6 +286,11 @@ class Admin_model extends CI_Model {
         $this->db->join('buku', 'buku.id_buku = pengunjung.id_buku');
         $query = $this->db->get();
         return $query->result_array();
+    }
+
+    public function cetak($tgl_awal, $tgl_akhir) {
+        $query=$this->CI->db->query("SELECT * FROM pengunjung as p join buku as b on p.id_buku = b.id_buku where p.status like '2' and p.tanggal BETWEEN '".$tgl_awal."' and '".$tgl_akhir."' GROUP by p.id_pengunjung ");
+				return $query;
     }
 
     public function data_kritik_saran() {

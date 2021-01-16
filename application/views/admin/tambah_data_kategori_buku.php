@@ -29,7 +29,7 @@
       <div class="sidebar-heading">
         Kelola Data
       </div>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-users"></i>
           <span>Data Pengunjung</span>

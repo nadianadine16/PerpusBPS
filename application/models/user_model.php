@@ -22,9 +22,9 @@
             "telepon" => $this->input->post('telepon', true),
             "email" => $this->input->post('email', true),
             "pekerjaan" => $this->input->post('pekerjaan', true),
-            // "jam_masuk" => $this->input->post('jam_masuk', true),
             "id_buku" => $this->input->post('id_buku', true)
         ];
+        $this->db->set('tanggal', 'NOW()', FALSE);
         $this->db->set('jam_masuk', 'NOW()', FALSE);
         $this->db->insert('pengunjung', $data);
     }

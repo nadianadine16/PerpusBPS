@@ -13,7 +13,7 @@
       <div class="sidebar-heading">
         Kelola Data
       </div>
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-book"></i>
           <span>Data Buku</span>
@@ -120,7 +120,7 @@
             <td><?=$ks["nama_pengunjung"];?></td>
             <td><?=$ks["email"];?></td>
             <td><?=$ks["KritikSaran"]?></td>
-            <td style="width:100px;">
+            <td>
             <a href="<?=base_url();?>admin/hapus_kritik_saran/<?=$ks['id_kritiksaran'];?>" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-xs" aria-hidden="true"></i></a></td>
           </tr>
           <?php endforeach;?>          

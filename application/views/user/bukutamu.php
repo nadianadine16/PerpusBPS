@@ -78,14 +78,13 @@
 				</div>
 					<span class="focus-input3"></span>
 				</div>
-                <div class="drop-down">
+				<div class="drop-down">
 					<div>
-					<select class="selection-2" id="id_buku" name="id_buku">
-                    <?php foreach($judulBuku as $d) : ?>
-                    <option value="<?=$d["id_buku"];?>"><?=$d["judul_buku"];?></option>
-                    <?php endforeach;?>
-                    </select>
-					</div>
+					<select id="id_judulbuku" name="id_judulbuku" style="width:540px;">
+					<?php foreach($judulBuku as $d) : ?>
+						<option value="<?=$d["id_buku"];?>"><?=$d["judul_buku"];?></option>
+					<?php endforeach;?>
+					</select><br><br></div>
 					<span class="focus-input3"></span>
 				</div>
 				<input class="input3" type="hidden" name="status" value="1">
@@ -125,6 +124,10 @@
 
   gtag('config', 'UA-23581568-13');
 </script>
-
+<script type="text/javascript">
+ $(document).ready(function() {
+     $('#id_judulbuku').select2();
+ });
+</script>
 </body>
 </html>

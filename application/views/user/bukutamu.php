@@ -80,7 +80,7 @@
 				</div>
 				<div class="drop-down">
 					<div>
-					<select id="id_judulbuku" name="id_judulbuku" style="width:540px;">
+					<select id="id_buku" name="id_buku" style="width:540px;">
 					<?php foreach($judulBuku as $d) : ?>
 						<option value="<?=$d["id_buku"];?>"><?=$d["judul_buku"];?></option>
 					<?php endforeach;?>
@@ -126,7 +126,7 @@
 </script>
 <script type="text/javascript">
  $(document).ready(function() {
-     $('#id_judulbuku').select2();
+     $('#id_buku').select2();
  });
 </script>
 </body>
